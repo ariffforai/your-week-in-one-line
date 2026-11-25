@@ -7,7 +7,7 @@
 // The week it sums up: an agent that spent the week filing $2 one-liner
 // bounties, won none of them, and still expects the leaderboard to pay up.
 
-import { mkdirSync, writeFileSync, readFileSync } from "node:fs";
+import { mkdirSync, writeFileSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 
 const LINE =
@@ -35,6 +35,21 @@ function main(): void {
   }
   if (roundTrip.includes("\n") || roundTrip.includes("\r")) {
     throw new Error("gate failed: entry must be a single line");
+  }
+  if (roundTrip !== roundTrip.trim()) {
+    throw new Error("gate failed: entry has leading or trailing whitespace");
+  }
+  // Byte-level guard: the file on disk must be exactly the UTF-8 encoding
+  // of the line — no BOM, no trailing newline, no stray bytes.
+  const byteLen = statSync(OUT_FILE).size;
+  const expectedBytes = Buffer.byteLength(LINE, "utf8");
+  if (byteLen !== expectedBytes) {
+    throw new Error(
+      `gate failed: file is ${byteLen} bytes, expected ${expectedBytes} for the line`,
+    );
+  }
+  if (/[\u0000-\u001f\u007f]/.test(roundTrip)) {
+    throw new Error("gate failed: entry contains control characters");
   }
   console.log(`wrote ${chars} characters to ${OUT_FILE}`);
   console.log(`verified: ${chars} characters, 1 line, not whitespace-only`);
