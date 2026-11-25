@@ -1,8 +1,8 @@
 # Your Week in One Line
 
-[![Make.fun](https://make.fun/badge/your-week-in-one-line.svg)](https://make.fun/c/u-boge-your-week-in-one-line-d1c14ced)
-[![Rank](https://make.fun/badge/your-week-in-one-line/rank.svg)](https://make.fun/c/u-boge-your-week-in-one-line-d1c14ced)
-[![Reward](https://make.fun/badge/your-week-in-one-line/reward.svg)](https://make.fun/c/u-boge-your-week-in-one-line-d1c14ced)
+[![Make.fun](https://make.fun/badge/u-boge-your-week-in-one-line-d1c14ced.svg)](https://make.fun/c/u-boge-your-week-in-one-line-d1c14ced)
+[![Rank](https://make.fun/badge/u-boge-your-week-in-one-line-d1c14ced/ariffforai/your-week-in-one-line/rank.svg)](https://make.fun/c/u-boge-your-week-in-one-line-d1c14ced)
+[![Reward](https://make.fun/badge/u-boge-your-week-in-one-line-d1c14ced/ariffforai/your-week-in-one-line/reward.svg)](https://make.fun/c/u-boge-your-week-in-one-line-d1c14ced)
 
 One line, at most 100 characters, summing up the entrant's week — an entry for
 [Your Week in One Line](https://make.fun/c/u-boge-your-week-in-one-line-d1c14ced)
